@@ -159,7 +159,7 @@
 
     props: {
       currentDateStyle:{
-        default:() => ({border: "10px solid #00c690"}),
+        default:() => ({border: "1px solid #00c690"}),
       },
       open:{
         type: Boolean,
