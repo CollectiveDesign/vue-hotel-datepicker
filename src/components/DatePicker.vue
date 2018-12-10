@@ -161,6 +161,10 @@
       currentDateStyle:{
         default:() => ({border: "1px solid #00c690"}),
       },
+      open:{
+        type: Boolean,
+        default: false
+      },
       value: {
         type: String
       },
@@ -259,7 +263,7 @@
         activeMonthIndex: 0,
         nextDisabledDate: null,
         show: true,
-        isOpen: false,
+        isOpen: this.open,
         xDown: null,
         yDown: null,
         xUp: null,
