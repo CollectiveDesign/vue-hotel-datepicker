@@ -11,7 +11,10 @@
         :hide-datepicker="hideDatepicker"
         :toggle-datepicker="toggleDatepicker"
         :single-day-selection="singleDaySelection"
-      )
+        @focus="firstInputFocused = true"
+        @blur="firstInputFocused = false"
+        :style="`${firstInputFocused ? {color: red} : ''}`"
+     )
       date-input(
         v-if="!singleDaySelection"
         :i18n="i18n"
@@ -281,6 +284,7 @@
         yUp: null,
         sortedDisabledDates: null,
         screenSize: this.handleWindowResize(),
+        firstInputFocused: false
       };
     },
 
