@@ -59,7 +59,7 @@
           )
         .datepicker__months(v-if='screenSize == "desktop" || openMode ' :class="`${openMode ? 'datepicker__months--open-mode' : ''}`")
           div.datepicker__month(v-for='n in [0,1]'  v-bind:key='n' :class="`${openMode ? 'datepicker__month--open-mode' : ''}`")
-            p.datepicker__month-name(v-text='getMonth(months[activeMonthIndex+n].days[15].date)')
+            p.datepicker__month-name(v-text='getMonth(months[activeMonthIndex+n].days[15].date)' :class="`${openMode ? 'datepicker__month-name--open-mode' : ''}`")
             .datepicker__week-row.-hide-up-to-tablet
               .datepicker__week-name(v-for='dayName in i18n["day-names"]' v-text='dayName')
             .square(v-for='day in months[activeMonthIndex+n].days'
@@ -976,7 +976,7 @@
             vertical-align: middle;
         }
 
-        &__month-name {
+        &__month-name:not(.datepicker__month-name--open-mode) {
             font-size: 16px;
             font-weight: 500;
             margin-top: -40px;
@@ -990,6 +990,15 @@
                 position: absolute;
                 width: 100%;
             }
+        }
+
+        &__month-name--open-mode {
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: -40px;
+            padding-bottom: 17px;
+            pointer-events: none;
+            text-align: center;
         }
 
         &__week-days {
