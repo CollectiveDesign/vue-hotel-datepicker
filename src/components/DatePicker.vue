@@ -13,7 +13,7 @@
         :single-day-selection="singleDaySelection"
         @focus="firstInputFocused = true"
         @blur="firstInputFocused = false"
-        :style="`${firstInputFocused ? focusStyle : ''}`"
+        :style="firstInputFocused ? focusStyle : ''"
      )
       date-input(
         v-if="!singleDaySelection"
@@ -181,7 +181,7 @@
       },
       focusStyle: {
         type: Object,
-        default:() => ({border: "1px solid #00c690"}),
+        default:() => ({border: '1px solid #00c690'}),
       },
       value: {
         type: String
