@@ -83,7 +83,7 @@
                 :checkOut='checkOut'
                 :currentDateStyle='currentDateStyle'
               )
-        span.datepicker__custom-clear-button(v-if='!openMode' @click='clearSelection') Clear
+        span.datepicker__custom-clear-button(v-if='!openMode' @click='clearSelection' :style="clearStyle") Clear
         div(v-if='screenSize !== "desktop" && isOpen && !openMode')
           .datepicker__week-row
             .datepicker__week-name(
@@ -171,6 +171,10 @@
       alignRight: {
         type: Boolean,
         default: false
+      },
+      clearStyle: {
+        type: Object,
+        default:() => ({position: absolute, bottom: 0, left: 0}),
       },
       value: {
         type: String
