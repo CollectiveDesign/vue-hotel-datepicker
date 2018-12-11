@@ -25,9 +25,6 @@
         :hide-datepicker="hideDatepicker"
         :toggle-datepicker="toggleDatepicker"
         :single-day-selection="singleDaySelection"
-        @focus="inputFocused[1] = true"
-        @blur="inputFocused[1] = false"
-        :style="inputFocused[1] ? focusStyle : ''"
       )
     .datepicker__clear-button(tabindex="0" @click='clearSelection' v-if="showClearSelectionButton")
       svg(xmlns='http://www.w3.org/2000/svg' viewBox="0 0 68 68")
@@ -418,7 +415,9 @@
 
       clickOutside() {
         if (!this.openMode && this.closeDatepickerOnClickOutside) {
-          this.hideDatepicker()
+          this.hideDatepicker();
+          this.inputFocused[0] = false;
+          this.inputFocused[1] = false;
         }
       },
 
