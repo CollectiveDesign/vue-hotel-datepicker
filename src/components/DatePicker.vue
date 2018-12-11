@@ -911,7 +911,7 @@
         }
 
         &__inner {
-            padding: 20px;
+            padding: 20px 20px 40px;
             float: left;
 
             @include device($up-to-tablet) {
