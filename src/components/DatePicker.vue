@@ -438,6 +438,7 @@
         else {
           this.checkOut = null;
           this.checkIn = event.date;
+          this.inputFocused[1] = true; 
         }
 
         this.nextDisabledDate = event.nextDisabledDate
