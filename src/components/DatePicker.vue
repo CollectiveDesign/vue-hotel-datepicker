@@ -686,6 +686,10 @@
             top: 0;
             margin: 0 auto;
             max-height: 900px;
+
+            @include device($up-to-tablet) {
+              width: 345px;
+            }
         }
 
         &__wrapper {
