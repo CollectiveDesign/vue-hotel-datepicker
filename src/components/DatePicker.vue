@@ -975,6 +975,10 @@
                 padding-top: 0;
               }
             }
+
+            &--open-mode:nth-child(2) {
+              display: none;
+            }
           
         }
 
