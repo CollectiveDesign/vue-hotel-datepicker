@@ -47,15 +47,17 @@
           )
       .datepicker__inner
         .datepicker__header
-          span.datepicker__month-button.datepicker__month-button--prev.-hide-up-to-tablet(
+          span.datepicker__month-button.datepicker__month-button--prev(
             @click='renderPreviousMonth'
             @keyup.enter.stop.prevent='renderPreviousMonth'
             :tabindex='isOpen ? 0 : -1'
+            :class="!openMode ? -hide-up-to-tablet : ''"
           )
-          span.datepicker__month-button.datepicker__month-button--next.-hide-up-to-tablet(
+          span.datepicker__month-button.datepicker__month-button--next(
             @click='renderNextMonth'
             @keyup.enter.stop.prevent='renderNextMonth'
             :tabindex='isOpen ? 0 : -1'
+            :class="!openMode ? -hide-up-to-tablet : ''"
           )
         .datepicker__months(v-if='screenSize == "desktop" || openMode ' :class="`${openMode ? 'datepicker__months--open-mode' : ''}`")
           div.datepicker__month(v-for='n in [0,1]'  v-bind:key='n' :class="`${openMode ? 'datepicker__month--open-mode' : ''}`")
