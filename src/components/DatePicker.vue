@@ -12,7 +12,6 @@
         :toggle-datepicker="toggleDatepicker"
         :single-day-selection="singleDaySelection"
         @focus="inputFocused[0] = true"
-        @blur="inputFocused[0] = false"
         :style="inputFocused[0] ? focusStyle : ''"
      )
       date-input(
@@ -446,9 +445,6 @@
       },
 
       renderPreviousMonth() {
-        if (this.inputFocused[0]) {
-          this.inputFocused[0] = true;
-        }
         if (this.activeMonthIndex >= 1) {
           this.activeMonthIndex--
         }
