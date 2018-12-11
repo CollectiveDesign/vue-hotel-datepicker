@@ -598,8 +598,8 @@
 
     @mixin focusStyle() {
       &:focus {
-        outline: 1px dashed darken($primary-color, 10%);
-        outline-offset: -10px;
+        // outline: 1px dashed darken($primary-color, 10%);
+        // outline-offset: -10px;
       }
     }
 
