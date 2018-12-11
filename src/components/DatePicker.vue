@@ -662,7 +662,7 @@
             max-height: 0;
         }
 
-        &--open {
+        &--open:not(.datepicker--open-mode) {
             box-shadow: 0 15px 30px 10px rgba($black, .08);
             max-height: 900px;
 
@@ -677,14 +677,15 @@
                 top: 0;
                 width: 100%;
             }
+        }
 
-            &-mode {
-              position: relative;
-              width: 690px; // should be 690px (650 + padding), BUT IT SHOULD BE REWRITTEN BY THE SINGLE MONTH MODE
-              box-shadow: none;
-              top: 0;
-              margin: 0 auto;
-            }
+        &--open-mode {
+            position: relative;
+            width: 690px; // should be 690px (650 + padding), BUT IT SHOULD BE REWRITTEN BY THE SINGLE MONTH MODE
+            box-shadow: none;
+            top: 0;
+            margin: 0 auto;
+            max-height: 900px;
         }
 
         &__wrapper {
@@ -967,7 +968,7 @@
                 width: 50%;
                 padding-right: 0;
                 padding-left: 10px;
-                padding-top: 60px;
+                padding-top: 0;
               }
             }
           
