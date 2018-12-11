@@ -83,7 +83,7 @@
                 :checkOut='checkOut'
                 :currentDateStyle='currentDateStyle'
               )
-              span.datepicker__custom-clear-button(v-if='!openMode')
+              span.datepicker__custom-clear-button(v-if='!openMode') Clear
         div(v-if='screenSize !== "desktop" && isOpen && !openMode')
           .datepicker__week-row
             .datepicker__week-name(
