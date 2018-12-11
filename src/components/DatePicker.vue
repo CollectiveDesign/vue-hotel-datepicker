@@ -898,7 +898,7 @@
             }
         }
 
-        &__months {
+        &__months:not(.datepicker__months--open-mode) {
             @include device($desktop) {
                 width: 650px;
             }
@@ -931,9 +931,10 @@
                     display: none;
                 }
             }
-            &--open-mode {
-              width: 650px;
-            }
+        }
+
+        &__months--open-mode {
+          width: 650px;
         }
 
         &__month {
