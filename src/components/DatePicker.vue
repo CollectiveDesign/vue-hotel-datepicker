@@ -543,6 +543,7 @@
         if(this.checkIn &&
         (this.getMonthDiff(this.getNextMonth(new Date(this.startDate)), this.checkIn) > 0 ||
         this.getMonthDiff(this.startDate, this.checkIn) > 0)){
+          this.createMonth(new Date(this.startDate));
           const count = this.getMonthDiff(this.startDate, this.checkIn)
           let nextMonth = new Date(this.startDate)
           for(let i = 0; i < count; i++){
