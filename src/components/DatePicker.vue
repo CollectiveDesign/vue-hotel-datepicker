@@ -693,6 +693,7 @@
 
             &--open-mode {
               background: none;
+              height: auto;
             }
         }
 
