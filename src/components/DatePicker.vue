@@ -81,7 +81,7 @@
                 :checkOut='checkOut'
                 :currentDateStyle='currentDateStyle'
               )
-        div(v-if='screenSize !== "desktop" && isOpen')
+        div(v-if='screenSize !== "desktop" && isOpen && !openMode')
           .datepicker__week-row
             .datepicker__week-name(
               v-for='dayName in this.i18n["day-names"]'
