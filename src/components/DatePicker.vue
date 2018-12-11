@@ -174,7 +174,7 @@
       },
       clearStyle: {
         type: Object,
-        default:() => ({position: absolute, bottom: 0, left: 0}),
+        default:() => ({position: 'absolute', bottom: 0, left: 0}),
       },
       value: {
         type: String
@@ -1061,7 +1061,7 @@
         }
 
         &__close-button {
-            appearence: none;
+            appearance: none;
             background: transparent;
             border: 0;
             color: $primary-color;
@@ -1078,7 +1078,7 @@
         }
 
         &__clear-button {
-            appearence: none;
+            appearance: none;
             background: transparent;
             border: 0;
             cursor: pointer;
@@ -1110,6 +1110,9 @@
         }
 
         &__custom-clear-button {
+          position: absolute;
+          bottom: 0;
+          left: 0;
           cursor: pointer;
           user-select: none;
         }
