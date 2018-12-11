@@ -938,6 +938,10 @@
 
         &__months--open-mode {
           width: 650px;
+          
+            @include device($up-to-tablet) {
+                width: 325px; //single month on smaller screens
+            }
         }
 
         &__month {
@@ -965,7 +969,7 @@
 
             &--open-mode {
               @include device($up-to-tablet) {
-                width: 50%;
+                width: 100%;
                 padding-right: 0;
                 padding-left: 10px;
                 padding-top: 0;
