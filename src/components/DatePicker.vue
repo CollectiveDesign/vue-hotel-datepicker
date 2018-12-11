@@ -430,8 +430,6 @@
         } else if (this.singleDaySelection == true) {
           this.checkIn = event.date
           this.checkOut = event.date
-        } else if (this.checkIn && this.checkOut) {
-          this.inputFocused[0] = false;
         }
         else if (this.checkIn !== null && this.checkOut == null) {
           this.checkOut = event.date;
@@ -440,6 +438,7 @@
         else {
           this.checkOut = null;
           this.checkIn = event.date;
+          this.inputFocused[0] = false;
           this.inputFocused[1] = true; 
         }
 
