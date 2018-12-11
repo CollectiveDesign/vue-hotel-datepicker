@@ -425,6 +425,8 @@
 
         if (this.checkIn == null && this.singleDaySelection == false) {
           this.checkIn = event.date;
+          this.inputFocused[0] = false;
+          this.inputFocused[1] = true;
         } else if (this.singleDaySelection == true) {
           this.checkIn = event.date
           this.checkOut = event.date
