@@ -1,6 +1,6 @@
 <template lang='pug'>
   .datepicker__wrapper(v-if='show' v-on-click-outside='clickOutside' @blur="clickOutside" :class="`${openMode ? 'datepicker__wrapper--open-mode' : ''}` ")
-    .datepicker__close-button.-hide-on-desktop(v-if='isOpen' @click='hideDatepicker') ＋
+    .datepicker__close-button.-hide-on-desktop(v-if='isOpen && !openMode' @click='hideDatepicker') ＋
     .datepicker__dummy-wrapper(  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''} ${openMode ? 'datepicker__dummy-wrapper--open-mode' : ''}` ")
       date-input(
         :i18n="i18n"
