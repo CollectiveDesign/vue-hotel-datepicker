@@ -6,6 +6,8 @@
     :class="inputClass"
     v-text="inputDate ? inputDate : i18n[inputDateType]"
     :tabindex="tabIndex"
+    @focus="$emit('focus')"
+    @blur="$emit('blur')"
   )
 </template>
 
