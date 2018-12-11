@@ -182,7 +182,7 @@
       },
       focusStyle: {
         type: Object,
-        default:() => ({border: '1px solid #00c690'}),
+        default:() => ({outline: '1px solid #00c690', 'outline-offset': '-10px'}),
       },
       value: {
         type: String
