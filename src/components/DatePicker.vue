@@ -284,7 +284,7 @@
         yUp: null,
         sortedDisabledDates: null,
         screenSize: this.handleWindowResize(),
-        firstInputFocused: false
+        firstInputFocused: false,
       };
     },
 
