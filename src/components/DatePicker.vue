@@ -446,6 +446,9 @@
       },
 
       renderPreviousMonth() {
+        if (this.inputFocused[0]) {
+          this.inputFocused[0] = true;
+        }
         if (this.activeMonthIndex >= 1) {
           this.activeMonthIndex--
         }
