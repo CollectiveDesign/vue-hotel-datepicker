@@ -548,7 +548,7 @@
           this.createMonth(new Date(this.startDate));
           const count = this.getMonthDiff(this.startDate, this.checkIn)
           let nextMonth = new Date(this.startDate)
-          for(let i = 0; i < count; i++){
+          for(let i = 0; i <= count; i++){
             let tempNextMonth = this.getNextMonth(nextMonth)
             this.createMonth(tempNextMonth)
             nextMonth = tempNextMonth
