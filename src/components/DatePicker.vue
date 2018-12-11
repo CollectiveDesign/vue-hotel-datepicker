@@ -303,7 +303,9 @@
           this.show = true;
           this.parseDisabledDates();
           this.reRender()
-          this.isOpen = false;
+          if (!this.openMode) {
+            this.isOpen = false;
+          }
         }
 
         this.$emit("check-out-changed", newDate)
@@ -676,7 +678,7 @@
 
             &-mode {
               position: static;
-              width: 100%;
+              width: 690px; // should be 690px (650 + padding), BUT IT SHOULD BE REWRITTEN BY THE SINGLE MONTH MODE
               box-shadow: none;
             }
         }
