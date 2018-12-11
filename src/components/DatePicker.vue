@@ -1110,9 +1110,8 @@
         }
 
         &__custom-clear-button {
-          position: absolute;
-          bottom: 0;
-          left: 0;
+          cursor: pointer;
+          user-select: none;
         }
 
         &__tooltip {
