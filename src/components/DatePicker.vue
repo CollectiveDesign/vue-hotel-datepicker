@@ -398,7 +398,8 @@
         this.nextDisabledDate = null;
         this.show = true;
         this.parseDisabledDates();
-        this.reRender()
+        this.reRender();
+        this.inputFocused[0] = true;
       },
 
       hideDatepicker() {
