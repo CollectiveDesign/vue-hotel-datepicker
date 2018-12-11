@@ -1,7 +1,7 @@
 <template lang='pug'>
   .datepicker__wrapper(v-if='show' v-on-click-outside='clickOutside' @blur="clickOutside")
     .datepicker__close-button.-hide-on-desktop(v-if='isOpen' @click='hideDatepicker') ＋
-    .datepicker__dummy-wrapper(  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''}` ")
+    .datepicker__dummy-wrapper(  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''} ${openMode ? 'datepicker__dummy-wrapper--open-mode' : ''}` ")
       date-input(
         :i18n="i18n"
         :input-date="formatDate(checkIn)"
@@ -27,7 +27,7 @@
       svg(xmlns='http://www.w3.org/2000/svg' viewBox="0 0 68 68")
         path(d='M6.5 6.5l55 55M61.5 6.5l-55 55')
 
-    .datepicker( :class='`${ isOpen ? "datepicker--open" : "datepicker--closed" }`')
+    .datepicker( :class="`${ isOpen ? 'datepicker--open' : 'datepicker--closed' } ${openMode ? 'datepicker--open-mode' : ''}`")
       .-hide-on-desktop
         .datepicker__dummy-wrapper.datepicker__dummy-wrapper--no-border(
           @click='toggleDatepicker' :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''}`"
@@ -161,7 +161,7 @@
       currentDateStyle:{
         default:() => ({border: "1px solid #00c690"}),
       },
-      open:{
+      openMode:{
         type: Boolean,
         default: false
       },
@@ -263,7 +263,7 @@
         activeMonthIndex: 0,
         nextDisabledDate: null,
         show: true,
-        isOpen: this.open,
+        isOpen: this.openMode,
         xDown: null,
         yDown: null,
         xUp: null,
@@ -378,7 +378,9 @@
       },
 
       hideDatepicker() {
-        this.isOpen = false;
+        if (!this.openMode) {
+          this.isOpen = false;
+        }
       },
 
       showDatepicker() {
@@ -390,7 +392,7 @@
       },
 
       clickOutside() {
-        if (this.closeDatepickerOnClickOutside) {
+        if (!this.openMode && this.closeDatepickerOnClickOutside) {
           this.hideDatepicker()
         }
       },
@@ -671,6 +673,12 @@
                 top: 0;
                 width: 100%;
             }
+
+            &-mode {
+              position: static;
+              width: 100%;
+              box-shadow: none;
+            }
         }
 
         &__wrapper {
@@ -717,6 +725,10 @@
 
             &--is-active {
                 border: 1px solid $primary-color;
+            }
+
+            &--open-mode {
+              display: none;
             }
         }
 
