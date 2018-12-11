@@ -25,6 +25,7 @@
         :hide-datepicker="hideDatepicker"
         :toggle-datepicker="toggleDatepicker"
         :single-day-selection="singleDaySelection"
+        :style="inputFocused[1] ? focusStyle : ''"
       )
     .datepicker__clear-button(tabindex="0" @click='clearSelection' v-if="showClearSelectionButton")
       svg(xmlns='http://www.w3.org/2000/svg' viewBox="0 0 68 68")
