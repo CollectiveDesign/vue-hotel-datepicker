@@ -11,9 +11,9 @@
         :hide-datepicker="hideDatepicker"
         :toggle-datepicker="toggleDatepicker"
         :single-day-selection="singleDaySelection"
-        @focus="firstInputFocused = true"
-        @blur="firstInputFocused = false"
-        :style="firstInputFocused ? focusStyle : ''"
+        @focus="inputFocused[0] = true"
+        @blur="inputFocused[0] = false"
+        :style="inputFocused[0] ? focusStyle : ''"
      )
       date-input(
         v-if="!singleDaySelection"
@@ -25,6 +25,9 @@
         :hide-datepicker="hideDatepicker"
         :toggle-datepicker="toggleDatepicker"
         :single-day-selection="singleDaySelection"
+        @focus="inputFocused[0] = true"
+        @blur="inputFocused[0] = false"
+        :style="inputFocused[0] ? focusStyle : ''"
       )
     .datepicker__clear-button(tabindex="0" @click='clearSelection' v-if="showClearSelectionButton")
       svg(xmlns='http://www.w3.org/2000/svg' viewBox="0 0 68 68")
@@ -288,7 +291,7 @@
         yUp: null,
         sortedDisabledDates: null,
         screenSize: this.handleWindowResize(),
-        firstInputFocused: false,
+        inputFocused: [false, false]
       };
     },
 
