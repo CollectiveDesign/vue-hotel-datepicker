@@ -977,7 +977,9 @@
             }
 
             &--open-mode:nth-child(2) {
-              display: none;
+              @include device($up-to-tablet) {
+                display: none;
+              }
             }
           
         }
