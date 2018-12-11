@@ -557,9 +557,7 @@
             this.createMonth(this.getNextMonth(nextMonth))
             this.activeMonthIndex = 1
           }
-          if (count > 1) {
-            this.activeMonthIndex += count - 2
-          }
+          this.activeMonthIndex += count - 1
       }else{
         this.createMonth(new Date(this.startDate));
         this.createMonth(this.getNextMonth(new Date(this.startDate)));
