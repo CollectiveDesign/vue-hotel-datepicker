@@ -28,7 +28,7 @@
         path(d='M6.5 6.5l55 55M61.5 6.5l-55 55')
 
     .datepicker( :class="`${ isOpen ? 'datepicker--open' : 'datepicker--closed' } ${openMode ? 'datepicker--open-mode' : ''}`")
-      .-hide-on-desktop
+      div( :class="`${!openMode ? '-hide-on-desktop' : ''}`")
         .datepicker__dummy-wrapper.datepicker__dummy-wrapper--no-border(
           @click='toggleDatepicker' :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''}`"
           v-if='isOpen'
