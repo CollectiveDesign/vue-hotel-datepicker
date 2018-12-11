@@ -548,14 +548,16 @@
           let nextMonth = new Date(this.startDate)
           for(let i = 0; i < count; i++){
             let tempNextMonth = this.getNextMonth(nextMonth)
-            this.createMonth(this.getNextMonth(nextMonth))
+            this.createMonth(tempNextMonth)
             nextMonth = tempNextMonth
           }
           if(this.checkOut && this.getMonthDiff(this.checkIn,this.checkOut) > 0){
             this.createMonth(this.getNextMonth(nextMonth))
             this.activeMonthIndex = 1
           }
-          this.activeMonthIndex += count - 2
+          if (count > 1) {
+            this.activeMonthIndex += count - 2
+          }
       }else{
         this.createMonth(new Date(this.startDate));
         this.createMonth(this.getNextMonth(new Date(this.startDate)));
