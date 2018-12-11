@@ -912,7 +912,7 @@
             height: 60px;
             width: 60px;
 
-            @include focusStyle();
+            // @include focusStyle();
 
             &--prev {
                 transform: rotateY(180deg);
