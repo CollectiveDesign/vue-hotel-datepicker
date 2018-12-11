@@ -912,6 +912,10 @@
             height: 60px;
             width: 60px;
 
+            &:focus {
+              outline: none;
+            }
+
             // @include focusStyle();
 
             &--prev {
