@@ -433,6 +433,7 @@
         }
         else if (this.checkIn !== null && this.checkOut == null) {
           this.checkOut = event.date;
+          this.inputFocused[1] = true;
         }
         else {
           this.checkOut = null;
