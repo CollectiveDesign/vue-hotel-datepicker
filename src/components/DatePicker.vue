@@ -57,7 +57,7 @@
             @keyup.enter.stop.prevent='renderNextMonth'
             :tabindex='isOpen ? 0 : -1'
           )
-        .datepicker__months(v-if='screenSize == "desktop"')
+        .datepicker__months(v-if='screenSize == "desktop" ' :class="`${openMode ? 'datepicker__months--open-mode' : ''}`")
           div.datepicker__month(v-for='n in [0,1]'  v-bind:key='n')
             p.datepicker__month-name(v-text='getMonth(months[activeMonthIndex+n].days[15].date)')
             .datepicker__week-row.-hide-up-to-tablet
@@ -930,6 +930,9 @@
                 @include device($up-to-tablet) {
                     display: none;
                 }
+            }
+            &--open-mode {
+              width: 650px;
             }
         }
 
