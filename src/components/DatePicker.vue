@@ -652,7 +652,7 @@
         left: 0;
         top: 48px;
         position: absolute;
-        z-index: 999;
+        z-index: 100;
 
         button.next--mobile {
             background: none;
