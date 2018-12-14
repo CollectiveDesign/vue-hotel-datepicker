@@ -86,6 +86,7 @@
                 :checkOut='checkOut'
                 :currentDateStyle='currentDateStyle'
               )
+        span.datepicker__custom-info-message(:style="infoMessageStyle") {{ infoMessageText }}
         span.datepicker__custom-clear-button(v-if='!openMode' @click='clearSelection' :style="clearStyle") Clear
         div(v-if='screenSize !== "desktop" && isOpen && !openMode')
           .datepicker__week-row
@@ -176,6 +177,14 @@
         default: false
       },
       clearStyle: {
+        type: Object,
+        default:() => ({position: 'absolute', bottom: 0, right: 0}),
+      },
+      infoMessageText: {
+        type: String,
+        default: ''
+      },
+      infoMessageStyle: {
         type: Object,
         default:() => ({position: 'absolute', bottom: 0, left: 0}),
       },
