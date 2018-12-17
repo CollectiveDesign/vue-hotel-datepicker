@@ -711,7 +711,9 @@
         }
 
         &--hide-input {
-          top: 0;
+          @include device($up-to-tablet) {
+            top: 0;
+          }
         }
 
         &--align-right {
