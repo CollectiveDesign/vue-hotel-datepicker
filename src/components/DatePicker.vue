@@ -1,7 +1,7 @@
 <template lang='pug'>
   .datepicker__wrapper(v-if='show' v-on-click-outside='clickOutside' @blur="clickOutside" :class="`${openMode ? 'datepicker__wrapper--open-mode' : ''}`" :style="design === 'inline' ? {background: 'none'} : ''")
     .datepicker__close-button.-hide-on-desktop(v-if='isOpen && !openMode' @click='hideDatepicker') ＋
-    .datepicker__dummy-wrapper(  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''} ${openMode ? 'datepicker__dummy-wrapper--open-mode' : ''}`" :style="design === 'boxed' ? boxedStyle : {border: 'none'}")
+    .datepicker__dummy-wrapper(  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''} ${openMode ? 'datepicker__dummy-wrapper--open-mode' : ''}`" :style="design === 'boxed' ? boxedStyle : {border: 'none', 'padding-left' : 0}")
       date-input(
         :i18n="i18n"
         :input-date="formatDate(checkIn)"
@@ -780,6 +780,8 @@
             float: left;
             width: 100%;
             height: 100%;
+            display: flex;
+            align-items: center;
 
             &--no-border.datepicker__dummy-wrapper {
                 margin-top: 15px;
