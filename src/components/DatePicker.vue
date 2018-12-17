@@ -172,6 +172,10 @@
         type: Boolean,
         default: false
       },
+      open: {
+        type: Boolean,
+        default: false
+      },
       alignRight: {
         type: Boolean,
         default: false
@@ -298,7 +302,8 @@
         activeMonthIndex: 0,
         nextDisabledDate: null,
         show: true,
-        isOpen: this.openMode,
+        // isOpen: this.openMode,
+        isOpen: this.open,
         xDown: null,
         yDown: null,
         xUp: null,
@@ -341,6 +346,7 @@
           this.reRender()
           if (!this.openMode) {
             this.isOpen = false;
+            this.$emit('close');
           }
         }
 
@@ -419,6 +425,7 @@
       hideDatepicker() {
         if (!this.openMode) {
           this.isOpen = false;
+          this.$emit('close');
         }
       },
 
