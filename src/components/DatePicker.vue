@@ -1,7 +1,7 @@
 <template lang='pug'>
-  .datepicker__wrapper(v-if='show' v-on-click-outside='clickOutside' @blur="clickOutside" :class="`${openMode ? 'datepicker__wrapper--open-mode' : ''}`" :style="design === 'inline' && !openMode ? {background: 'none'} : ''")
+  .datepicker__wrapper(v-if='show' v-on-click-outside='clickOutside' @blur="clickOutside" :class="`${openMode ? 'datepicker__wrapper--open-mode' : ''}`" :style="design === 'inline' && !openMode || hideInput ? {background: 'none'} : ''")
     .datepicker__close-button.-hide-on-desktop(v-if='isOpen && !openMode' @click='hideDatepicker') ＋
-    .datepicker__dummy-wrapper(  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''} ${openMode ? 'datepicker__dummy-wrapper--open-mode' : ''} ${design === 'inline' && isOpen ? 'datepicker__dummy-wrapper--open-mode-inline' : ''}`" :style="design === 'boxed' && !openMode ? boxedStyle : {border: 'none', 'padding-left' : '2px', 'padding-right' : '2px'}")
+    .datepicker__dummy-wrapper(v-if='!hideInput'  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''} ${openMode ? 'datepicker__dummy-wrapper--open-mode' : ''} ${design === 'inline' && isOpen ? 'datepicker__dummy-wrapper--open-mode-inline' : ''}`" :style="design === 'boxed' && !openMode ? boxedStyle : {border: 'none', 'padding-left' : '2px', 'padding-right' : '2px'}")
       date-input(
         :i18n="i18n"
         :input-date="formatDate(checkIn)"
@@ -30,7 +30,7 @@
       svg(xmlns='http://www.w3.org/2000/svg' viewBox="0 0 68 68")
         path(d='M6.5 6.5l55 55M61.5 6.5l-55 55')
 
-    .datepicker( :class="`${ isOpen ? 'datepicker--open' : 'datepicker--closed' } ${openMode ? 'datepicker--open-mode' : ''} ${alignRight ? 'datepicker--align-right' : ''}`")
+    .datepicker( :class="`${ isOpen ? 'datepicker--open' : 'datepicker--closed' } ${openMode ? 'datepicker--open-mode' : ''} ${alignRight ? 'datepicker--align-right' : ''}`" :style="hideInput ? {top:0} : ''")
       div( :class="`${openMode ? '-is-hidden' : '-hide-on-desktop'}`")
         .datepicker__dummy-wrapper.datepicker__dummy-wrapper--no-border(
           @click='toggleDatepicker' :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''}`"
@@ -173,6 +173,10 @@
         default: false
       },
       isOpen: {
+        type: Boolean,
+        default: false
+      },
+      hideInput: {
         type: Boolean,
         default: false
       },
