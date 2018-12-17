@@ -712,7 +712,7 @@
 
         &--hide-input {
           @include device($up-to-tablet) {
-            top: 0;
+            top: -12px;
           }
         }
 
