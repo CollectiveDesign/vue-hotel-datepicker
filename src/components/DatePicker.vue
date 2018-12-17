@@ -796,7 +796,7 @@
               display: none;
 
               &-inline {
-                padding-left: 0;
+                padding-left: 0!important;
               }
             }
         }
