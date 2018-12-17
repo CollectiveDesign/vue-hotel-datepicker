@@ -749,7 +749,7 @@
 
             &--open-mode {
               background: none;
-              height: auto;
+              height: auto!important;
             }
         }
 
