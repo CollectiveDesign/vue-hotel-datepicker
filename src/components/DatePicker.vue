@@ -750,10 +750,6 @@
             &--open-mode {
               background: none;
               height: auto!important;
-
-              &-inline {
-                padding-left: 0;
-              }
             }
         }
 
@@ -798,6 +794,10 @@
 
             &--open-mode {
               display: none;
+
+              &-inline {
+                padding-left: 0;
+              }
             }
         }
 
