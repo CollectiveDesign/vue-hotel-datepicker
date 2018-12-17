@@ -30,7 +30,7 @@
       svg(xmlns='http://www.w3.org/2000/svg' viewBox="0 0 68 68")
         path(d='M6.5 6.5l55 55M61.5 6.5l-55 55')
 
-    .datepicker( :class="`${ isOpen ? 'datepicker--open' : 'datepicker--closed' } ${openMode ? 'datepicker--open-mode' : ''} ${alignRight ? 'datepicker--align-right' : ''}`" :style="hideInput ? {top:0} : ''")
+    .datepicker( :class="`${ isOpen ? 'datepicker--open' : 'datepicker--closed' } ${openMode ? 'datepicker--open-mode' : ''} ${alignRight ? 'datepicker--align-right' : ''} ${hideInput ? 'datepicker--hide-input' : ''}`" :style="hideInput ? {top:0} : ''")
       div( :class="`${openMode ? '-is-hidden' : '-hide-on-desktop'}`")
         .datepicker__dummy-wrapper.datepicker__dummy-wrapper--no-border(
           @click='toggleDatepicker' :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''}`"
@@ -708,6 +708,10 @@
                 top: -50%;
                 left: -50%;
             }
+        }
+
+        &--hide-input {
+          top: 0;
         }
 
         &--align-right {
