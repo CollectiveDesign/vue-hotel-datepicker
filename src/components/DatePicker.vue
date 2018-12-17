@@ -172,7 +172,7 @@
         type: Boolean,
         default: false
       },
-      open: {
+      isOpen: {
         type: Boolean,
         default: false
       },
@@ -303,7 +303,6 @@
         nextDisabledDate: null,
         show: true,
         // isOpen: this.openMode,
-        isOpen: this.open,
         xDown: null,
         yDown: null,
         xUp: null,
@@ -345,7 +344,7 @@
           this.parseDisabledDates();
           this.reRender()
           if (!this.openMode) {
-            this.isOpen = false;
+            // this.isOpen = false;
             this.$emit('close');
           }
         }
@@ -424,17 +423,17 @@
 
       hideDatepicker() {
         if (!this.openMode) {
-          this.isOpen = false;
+          // this.isOpen = false;
           this.$emit('close');
         }
       },
 
       showDatepicker() {
-        this.isOpen = true;
+        // this.isOpen = true;
       },
 
       toggleDatepicker() {
-        this.isOpen = !this.isOpen;
+        // this.isOpen = !this.isOpen;
       },
 
       clickOutside() {
