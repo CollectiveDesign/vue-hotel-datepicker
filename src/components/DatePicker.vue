@@ -30,7 +30,7 @@
       svg(xmlns='http://www.w3.org/2000/svg' viewBox="0 0 68 68")
         path(d='M6.5 6.5l55 55M61.5 6.5l-55 55')
 
-    .datepicker( :class="`${ isOpen ? 'datepicker--open' : 'datepicker--closed' } ${openMode ? 'datepicker--open-mode' : ''} ${alignRight ? 'datepicker--align-right' : ''} ${hideInput ? 'datepicker--hide-input' : ''}`")
+    .datepicker( :class="`${ isOpen ? 'datepicker--open' : 'datepicker--closed' } ${openMode ? 'datepicker--open-mode' : ''} ${alignRight ? 'datepicker--align-right' : ''} ${hideInput ? 'datepicker--hide-input' : ''}`" :style="{background: backgroundColor}")
       div( :class="`${openMode ? '-is-hidden' : '-hide-on-desktop'}`")
         .datepicker__dummy-wrapper.datepicker__dummy-wrapper--no-border(
           @click='toggleDatepicker' :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''}`"
@@ -65,7 +65,7 @@
         .datepicker__months(v-if='screenSize == "desktop" || openMode ' :class="`${openMode ? 'datepicker__months--open-mode' : ''}`")
           div.datepicker__month(v-for='n in [0,1]'  v-bind:key='n' :class="`${openMode ? 'datepicker__month--open-mode' : ''}`")
             p.datepicker__month-name(v-text='getMonth(months[activeMonthIndex+n].days[15].date)' :class="`${openMode ? 'datepicker__month-name--open-mode' : ''}`")
-            .datepicker__week-row.-hide-up-to-tablet
+            .datepicker__week-row.-hide-up-to-tablet(:style="{background: backgroundColor}")
               .datepicker__week-name(v-for='dayName in i18n["day-names"]' v-text='dayName')
             .square(v-for='day in months[activeMonthIndex+n].days'
               @mouseover='hoveringDate = day.date'
@@ -207,6 +207,10 @@
       boxedStyle : {
         type: Object,
         default:() => ({border: 'solid 1px #d7d9e2'})
+      },
+      backgroundColor: {
+        type: String,
+        default: '#fff'
       },
       value: {
         type: String
@@ -671,7 +675,6 @@
 
     .datepicker {
         transition: all .2s ease-in-out;
-        background-color: $white;
         color: $gray;
         font-size: 16px;
         line-height: 14px;
@@ -679,7 +682,7 @@
         left: 0;
         top: 48px;
         position: absolute;
-        z-index: 100;
+        z-index: 90;
 
         button.next--mobile {
             background: none;
