@@ -65,7 +65,7 @@
         .datepicker__months(v-if='screenSize == "desktop" || openMode ' :class="`${openMode ? 'datepicker__months--open-mode' : ''}`")
           div.datepicker__month(v-for='n in [0,1]'  v-bind:key='n' :class="`${openMode ? 'datepicker__month--open-mode' : ''}`")
             p.datepicker__month-name(v-text='getMonth(months[activeMonthIndex+n].days[15].date)' :class="`${openMode ? 'datepicker__month-name--open-mode' : ''}`")
-            .datepicker__week-row.-hide-up-to-tablet(:style="{'border-bottom': '5px solid ' + backgroundColor}")
+            .datepicker__week-row.-hide-up-to-tablet(:style="{'border-bottom': `5px solid ${backgroundColor}`}")
               .datepicker__week-name(v-for='dayName in i18n["day-names"]' v-text='dayName')
             .square(v-for='day in months[activeMonthIndex+n].days'
               @mouseover='hoveringDate = day.date'
