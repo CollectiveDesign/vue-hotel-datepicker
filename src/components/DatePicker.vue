@@ -634,10 +634,10 @@
     /* =============================================================
      * RESPONSIVE LAYOUT HELPERS
      * ============================================================*/
-    $tablet: '(min-width: 480px) and (max-width: 767px)';
-    $phone: '(max-width: 479px)';
-    $desktop: '(min-width: 768px)';
-    $up-to-tablet: '(max-width: 767px)';
+    $tablet: '(min-width: 640px) and (max-width: 1023px)';
+    $phone: '(max-width: 639px)';
+    $desktop: '(min-width: 1024px)';
+    $up-to-tablet: '(max-width: 1023px)';
     $extra-small-screen: '(max-width: 23em)';
 
     @mixin focusStyle() {
