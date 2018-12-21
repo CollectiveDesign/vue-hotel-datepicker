@@ -373,13 +373,13 @@
       },
 
       handleWindowResize() {
-        if (window.innerWidth < 480) {
+        if (window.innerWidth < 640) {
           this.screenSize = 'smartphone';
         }
-        else if (window.innerWidth >= 480 && window.innerWidth < 768) {
+        else if (window.innerWidth >= 640 && window.innerWidth < 1024) {
           this.screenSize = 'tablet';
         }
-        else if (window.innerWidth >= 768) {
+        else if (window.innerWidth >= 1024) {
           this.screenSize = 'desktop';
         }
 
