@@ -753,7 +753,7 @@
             width: 690px; // should be 690px (650 + padding), BUT IT SHOULD BE REWRITTEN BY THE SINGLE MONTH MODE
             box-shadow: none;
             top: 0;
-            margin: 0 auto;
+            // margin: 0 auto;
             max-height: 900px;
 
             @include device($up-to-tablet) {
