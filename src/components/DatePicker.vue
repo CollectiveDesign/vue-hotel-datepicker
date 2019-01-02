@@ -837,7 +837,7 @@
             text-indent: 5px;
             width: calc(50% + 4px);
 
-            @include device($phone) {
+            @include device($tablet) {
                 text-indent: 0;
                 text-align: center;
             }
