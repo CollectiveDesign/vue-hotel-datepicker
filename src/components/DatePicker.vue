@@ -837,7 +837,7 @@
             text-indent: 5px;
             width: calc(50% + 4px);
 
-            @include device($tablet) {
+            @include device($up-to-tablet) {
                 text-indent: 0;
                 text-align: center;
             }
