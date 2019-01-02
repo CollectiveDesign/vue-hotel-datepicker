@@ -760,7 +760,7 @@
               width: 345px;
             }
 
-            &__inner {
+            .datepicker__inner {
               padding: 20px 0px 40px;
             }
         }
