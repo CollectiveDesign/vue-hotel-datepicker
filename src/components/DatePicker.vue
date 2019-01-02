@@ -759,6 +759,10 @@
             @include device($up-to-tablet) {
               width: 345px;
             }
+
+            &__inner {
+              padding: 20px 0px 40px;
+            }
         }
 
         &__wrapper {
