@@ -757,7 +757,8 @@
             max-height: 900px;
 
             @include device($up-to-tablet) {
-              width: 345px;
+              // width: 345px;
+              width: 100%;
             }
 
             .datepicker__inner {
