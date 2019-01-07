@@ -1184,7 +1184,7 @@
           user-select: none;
           z-index: 45;
           @include device($up-to-tablet) {
-            box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.16);
+              box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.16);
           }
         }
 
