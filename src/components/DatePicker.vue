@@ -1027,7 +1027,8 @@
           width: 650px;
           
             @include device($up-to-tablet) {
-                width: 325px; //single month on smaller screens
+                // width: 325px; //single month on smaller screens
+              width: 100%;
             }
         }
 
