@@ -1182,6 +1182,7 @@
         &__custom-clear-button {
           cursor: pointer;
           user-select: none;
+          z-index: 45;
         }
 
         &__tooltip {
