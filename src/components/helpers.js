@@ -87,22 +87,21 @@ export default {
 
   swipeAfterScroll(direction) {
     if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
-      // const swiperWrapper = document.getElementById('swiperWrapper');
+      const swiperWrapper = document.getElementById('swiperWrapper');
 
       // If wrapper has vertical scroll
-      // if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
-      //   if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight)) {
-      //     this.renderNextMonth();
-      //   }
-      //   else if (swiperWrapper.scrollTop === 100) {
-      //     this.renderPreviousMonth();
-      //   }
-      //   else {
-      //     return;
-      //   }
-      // }
-      // else 
-      if (direction == 'up') {
+      if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
+        if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight)) {
+          this.renderNextMonth();
+        }
+        else if (swiperWrapper.scrollTop === 100) {
+          this.renderPreviousMonth();
+        }
+        else {
+          return;
+        }
+      }
+      else if (direction == 'up') {
         this.renderNextMonth();
       }
       else if (direction == 'down') {
