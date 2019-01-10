@@ -86,7 +86,7 @@ export default {
   },
 
   swipeAfterScroll(direction) {
-    if (this.screenSize !== 'desktop' && this.isOpen) {
+    if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
       const swiperWrapper = document.getElementById('swiperWrapper');
 
       // If wrapper has vertical scroll
