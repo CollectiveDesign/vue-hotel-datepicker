@@ -320,9 +320,6 @@
         sortedDisabledDates: null,
         screenSize: this.handleWindowResize(),
         inputFocused: [false, false],
-        scrollTop: 0,
-        scrollHeight: 0,
-        offsetHeight: 0
       };
     },
 
