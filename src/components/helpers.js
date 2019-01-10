@@ -91,7 +91,7 @@ export default {
 
       // If wrapper has vertical scroll
       if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
-        if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 200)) {
+        if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight + 200)) {
           this.renderNextMonth();
         }
         else if (swiperWrapper.scrollTop === 0) {
