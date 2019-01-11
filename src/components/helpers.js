@@ -94,6 +94,7 @@ export default {
 
       console.log('yes, mobile');
 
+      this.$emit('outside condition', {scrollHeight:swiperWrapper.scrollHeight, clientHeight: swiperWrapper.clientHeight});
       // If wrapper has vertical scroll
       if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
         this.$emit('inside-condition', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
