@@ -337,6 +337,7 @@
 
           if (value) {
             bodyClassList.add('-overflow-hidden');
+            this.renderNextMonth();
           }
           else {
             bodyClassList.remove('-overflow-hidden');
