@@ -89,22 +89,33 @@ export default {
     if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
       const swiperWrapper = document.getElementById('swiperWrapper');
 
+      console.log('swipe after scroll');
+
       // If wrapper has vertical scroll
       if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
+        console.log('inside condition');
+        console.log('scrollTop ' + swiperWrapper.scrollTop);
+        console.log('scrollHeight ' + swiperWrapper.scrollHeight);
+        console.log('offsetHeight ' + swiperWrapper.offsetHeight);
         if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight)) {
+          console.log('render next month');
           this.renderNextMonth();
         }
-        else if (swiperWrapper.scrollTop === 100) {
+        else if (swiperWrapper.scrollTop === 0) {
+          console.log('render prev month');
           this.renderPreviousMonth();
         }
         else {
+          console.log('no new render');
           return;
         }
       }
       else if (direction == 'up') {
+        console.log('direction up, render next month');
         this.renderNextMonth();
       }
       else if (direction == 'down') {
+        console.log('direction down, render next month');
         this.renderPreviousMonth();
       }
     }
