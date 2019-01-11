@@ -100,12 +100,14 @@ export default {
         console.log('scrollTop ' + swiperWrapper.scrollTop);
         console.log('scrollHeight ' + swiperWrapper.scrollHeight);
         console.log('offsetHeight ' + swiperWrapper.offsetHeight);
-        if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight)) {
+        if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 300)) {
           console.log('render next month');
+          this.$emit('render next month', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
           this.renderNextMonth();
         }
-        else if (swiperWrapper.scrollTop === 0) {
+        else if (swiperWrapper.scrollTop === 200) {
           console.log('render prev month');
+          this.$emit('render prev month', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
           this.renderPreviousMonth();
         }
         else {
