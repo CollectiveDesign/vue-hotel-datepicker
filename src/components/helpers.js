@@ -87,27 +87,18 @@ export default {
 
   swipeAfterScroll(direction) {
     this.inside = true;
-    console.log('swipe after scroll');
-    this.$emit('swipe after scroll');
     if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
       const swiperWrapper = document.getElementById('swiperWrapper');
 
-      console.log('yes, mobile');
-
-      this.$emit('outside condition', {scrollHeight:swiperWrapper.scrollHeight, clientHeight: swiperWrapper.clientHeight});
       // If wrapper has vertical scroll
       if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
-        this.$emit('inside-condition', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
         if (swiperWrapper.scrollTop === 0) {
-          this.$emit('scroll top zero, render next month', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
           this.renderNextMonth();
         }
         if (swiperWrapper.scrollTop > (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 500) && swiperWrapper.scrollTop <= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight)) {
-          this.$emit('render next month', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
           this.renderNextMonth();
         }
         else if (swiperWrapper.scrollTop === 0) {
-          this.$emit('render prev month', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
           this.renderPreviousMonth();
         }
         else {
