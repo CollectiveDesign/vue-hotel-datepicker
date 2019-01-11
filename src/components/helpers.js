@@ -88,6 +88,7 @@ export default {
   swipeAfterScroll(direction) {
     this.inside = true;
     console.log('swipe after scroll');
+    this.$emit('swipe after scroll');
     if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
       const swiperWrapper = document.getElementById('swiperWrapper');
 
@@ -105,7 +106,7 @@ export default {
           this.$emit('scroll top zero, render next month', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
           this.renderNextMonth();
         }
-        if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 50)) {
+        if (swiperWrapper.scrollTop > (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 50) && swiperWrapper.scrollTop < (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight)) {
           console.log('render next month');
           this.$emit('render next month', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
           this.renderNextMonth();
