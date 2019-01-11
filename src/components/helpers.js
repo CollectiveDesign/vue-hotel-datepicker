@@ -105,7 +105,7 @@ export default {
           this.$emit('scroll top zero, render next month', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
           this.renderNextMonth();
         }
-        if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 300)) {
+        if (swiperWrapper.scrollTop === (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 200)) {
           console.log('render next month');
           this.$emit('render next month', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
           this.renderNextMonth();
