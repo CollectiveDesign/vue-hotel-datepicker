@@ -320,6 +320,7 @@
         sortedDisabledDates: null,
         screenSize: this.handleWindowResize(),
         inputFocused: [false, false],
+        inside: false
       };
     },
 

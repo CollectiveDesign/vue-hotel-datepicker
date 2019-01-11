@@ -86,13 +86,16 @@ export default {
   },
 
   swipeAfterScroll(direction) {
+    this.inside = true;
+    console.log('swipe after scroll');
     if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
       const swiperWrapper = document.getElementById('swiperWrapper');
 
-      console.log('swipe after scroll');
+      console.log('yes, mobile');
 
       // If wrapper has vertical scroll
       if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
+        this.$emit('inside-condition', {scrollTop: swiperWrapper.scrollTop, scrollHeight: swiperWrapper.scrollHeight, offsetHeight: swiperWrapper.offsetHeight});
         console.log('inside condition');
         console.log('scrollTop ' + swiperWrapper.scrollTop);
         console.log('scrollHeight ' + swiperWrapper.scrollHeight);
