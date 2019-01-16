@@ -1136,20 +1136,20 @@
         }
 
         &__close-button {
-            // appearance: none;
-            // background: transparent;
             border: 0;
-            // color: $primary-color;
             cursor: pointer;
-            // font-size: 21px;
-            // font-weight: bold;
             margin-top: 0;
             outline: 0;
             z-index: 10000;
             position: fixed;
             left: 7px;
             top: 5px;
-            // transform: rotate(45deg);
+
+            svg {
+              path {
+                fill: #767676;
+              }
+            }
         }
 
         &__clear-button {
