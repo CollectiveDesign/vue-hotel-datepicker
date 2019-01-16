@@ -739,7 +739,8 @@
 
             @include device($up-to-tablet) {
                 box-shadow: none;
-                height: 100%;
+                // height: 100%;
+                height: calc(100% - 60px);
                 left: 0;
                 right: 0;
                 bottom: 0;
@@ -997,7 +998,8 @@
 
             @include device($up-to-tablet) {
                 margin-top: 92px;
-                height: calc(100% - 92px);
+                // height: calc(100% - 92px);
+                height: calc(100% - 150px);
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -1007,6 +1009,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
+                border-bottom: 1px solid #e1e1e1;
             }
 
             &::before {
@@ -1181,12 +1184,18 @@
             @include focusStyle();
         }
 
+        &__custom-info-message {
+          @include device($up-to-tablet) {
+              bottom: 12px;
+          }
+        }
+
         &__custom-clear-button {
           cursor: pointer;
           user-select: none;
           z-index: 45;
           @include device($up-to-tablet) {
-              // box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.16);
+              bottom: 12px;
           }
         }
 
