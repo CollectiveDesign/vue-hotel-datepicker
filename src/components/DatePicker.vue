@@ -1191,7 +1191,7 @@
 
         &__custom-info-message {
           @include device($up-to-tablet) {
-              bottom: 12px !important;
+              bottom: 22px !important;
           }
         }
 
@@ -1200,7 +1200,7 @@
           user-select: none;
           z-index: 45;
           @include device($up-to-tablet) {
-              bottom: 22px !important;
+              bottom: 12px !important;
           }
         }
 
