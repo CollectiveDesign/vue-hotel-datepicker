@@ -746,7 +746,7 @@
                 bottom: 0;
                 -webkit-overflow-scrolling: touch !important;
                 position: fixed;
-                top: 0;
+                top: 60px;
                 width: 100%;
             }
         }
@@ -1186,7 +1186,7 @@
 
         &__custom-info-message {
           @include device($up-to-tablet) {
-              bottom: 12px;
+              bottom: 12px !important;
           }
         }
 
@@ -1195,7 +1195,7 @@
           user-select: none;
           z-index: 45;
           @include device($up-to-tablet) {
-              bottom: 12px;
+              bottom: 12px !important;
           }
         }
 
