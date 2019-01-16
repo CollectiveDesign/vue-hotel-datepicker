@@ -1,7 +1,7 @@
 <template lang='pug'>
   .datepicker__wrapper(v-if='show' v-on-click-outside='clickOutside' @blur="clickOutside" :class="`${openMode ? 'datepicker__wrapper--open-mode' : ''}`" :style="design === 'inline' && !openMode || hideInput ? {background: 'none'} : ''")
     .datepicker__close-button.-hide-on-desktop(v-if='isOpen && !openMode' @click='hideDatepicker')
-      svg(width="30px" height="30px" viewBox="0 0 30 30")
+      svg(width="35px" height="35px" viewBox="0 0 30 30")
         path(d="M6.2521645,7.5 L0.258435193,1.50627069 C-0.0861450644,1.16169043 -0.0861450644,0.60301545 0.258435193,0.258435193 C0.60301545,-0.0861450644 1.16169043,-0.0861450644 1.50627069,0.258435193 L7.5,6.2521645 L13.4937293,0.258435193 C13.8383096,-0.0861450644 14.3969845,-0.0861450644 14.7415648,0.258435193 C15.0861451,0.60301545 15.0861451,1.16169043 14.7415648,1.50627069 L8.7478355,7.5 L14.7415648,13.4937293 C15.0861451,13.8383096 15.0861451,14.3969845 14.7415648,14.7415648 C14.3969845,15.0861451 13.8383096,15.0861451 13.4937293,14.7415648 L7.5,8.7478355 L1.50627069,14.7415648 C1.16169043,15.0861451 0.60301545,15.0861451 0.258435193,14.7415648 C-0.0861450644,14.3969845 -0.0861450644,13.8383096 0.258435193,13.4937293 L6.2521645,7.5 Z")
     .datepicker__dummy-wrapper(v-if='!hideInput'  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''} ${openMode ? 'datepicker__dummy-wrapper--open-mode' : ''} ${design === 'inline' && isOpen ? 'datepicker__dummy-wrapper--open-mode-inline' : ''}`" :style="design === 'boxed' && !openMode ? boxedStyle : {border: 'none', 'padding-left' : '2px', 'padding-right' : '2px'}")
       date-input(
@@ -1144,6 +1144,11 @@
             position: fixed;
             left: 7px;
             top: 5px;
+
+            @include device($up-to-tablet) {
+              left: 21px;
+              top: 21px;
+            }
 
             svg {
               path {
