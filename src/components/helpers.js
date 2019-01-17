@@ -89,6 +89,7 @@ export default {
     this.inside = true;
     if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
       const swiperWrapper = document.getElementById('swiperWrapper');
+      this.$emit('swipeAfterScroll', {scrollTop:swiperWrapper.scrollTop,scrollHeight:swiperWrapper.scrollHeight,offsetHeight:swiperWrapper.offsetHeight});
 
       // If wrapper has vertical scroll
       if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
