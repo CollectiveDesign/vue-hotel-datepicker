@@ -96,7 +96,7 @@ export default {
         if (swiperWrapper.scrollTop === 0) {
           this.renderNextMonth();
         }
-        if (swiperWrapper.scrollTop > (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 500) && swiperWrapper.scrollTop <= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight)) {
+        if (swiperWrapper.scrollTop > (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 500) && swiperWrapper.scrollTop <= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight + 10)) {
           this.renderNextMonth();
         }
         else if (swiperWrapper.scrollTop === 0) {
@@ -118,6 +118,7 @@ export default {
   handleTouchStart(evt) {
     this.xDown = evt.touches[0].clientX;
     this.yDown = evt.touches[0].clientY;
+    this.renderNextMonth();
   },
   getMonthDiff(d1, d2) {
     d1 = new Date(d1);
