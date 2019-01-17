@@ -363,7 +363,6 @@
 
         this.$emit("check-out-changed", newDate)
       },
-
     },
 
     methods: {
