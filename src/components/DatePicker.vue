@@ -486,7 +486,7 @@
         else return
       },
 
-      renderNextMonth() {
+      renderNextMonth: throttle(function throttleRenderNextMonth() {
         if (this.activeMonthIndex < this.months.length - 2) {
           this.activeMonthIndex++;
           return
@@ -516,7 +516,7 @@
         );
 
         this.activeMonthIndex++;
-      },
+      }, 200),
 
       setCheckIn(date) {
         this.checkIn = date;
@@ -600,6 +600,7 @@
     },
 
     mounted() {
+      document.addEventListener('scroll', this.handleScroll, false);
       document.addEventListener('touchstart', this.handleTouchStart, false);
       document.addEventListener('touchmove', this.handleTouchMove, false);
       window.addEventListener('resize', this.handleWindowResize);

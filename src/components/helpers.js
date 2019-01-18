@@ -114,6 +114,19 @@ export default {
     }
   },
 
+  handleScroll(evt) {
+    this.$emit('handlescroll');
+    if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
+      const swiperWrapper = document.getElementById('swiperWrapper');
+      if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
+        //if close to the bottom
+        if (swiperWrapper.scrollTop >= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 100) && swiperWrapper.scrollTop <= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight + 10)) {
+          this.renderNextMonth();
+        }
+      }
+    }
+  },
+
   handleTouchStart(evt) {
     this.xDown = evt.touches[0].clientX;
     this.yDown = evt.touches[0].clientY;
