@@ -603,7 +603,7 @@
       document.addEventListener('touchstart', this.handleTouchStart, false);
       document.addEventListener('touchmove', this.handleTouchMove, false);
       window.addEventListener('resize', this.handleWindowResize);
-      window.addEventListener('scroll', this.handleScroll);
+      document.getElementById('swiperWrapper').addEventListener('scroll', this.handleScroll);
 
       this.onElementHeightChange(document.body, () => {
         this.emitHeighChangeEvent();
