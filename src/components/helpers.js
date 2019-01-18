@@ -130,15 +130,6 @@ export default {
   handleTouchStart(evt) {
     this.xDown = evt.touches[0].clientX;
     this.yDown = evt.touches[0].clientY;
-    // if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
-    //   const swiperWrapper = document.getElementById('swiperWrapper');
-    //   if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
-    //     //if close to the bottom
-    //     if (swiperWrapper.scrollTop >= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 20) && swiperWrapper.scrollTop <= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight + 10)) {
-    //       this.renderNextMonth();
-    //     }
-    //   }
-    // }
   },
   getMonthDiff(d1, d2) {
     d1 = new Date(d1);
