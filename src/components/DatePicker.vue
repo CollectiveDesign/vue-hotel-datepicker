@@ -600,7 +600,7 @@
     },
 
     mounted() {
-      document.addEventListener('scroll', this.handleScroll, false);
+      window.addEventListener('scroll', this.handleScroll, false);
       document.addEventListener('touchstart', this.handleTouchStart, false);
       document.addEventListener('touchmove', this.handleTouchMove, false);
       window.addEventListener('resize', this.handleWindowResize);
