@@ -486,7 +486,7 @@
         else return
       },
 
-      renderNextMonth: throttle(function throttleRenderNextMonth() {
+      renderNextMonth() {
         if (this.activeMonthIndex < this.months.length - 2) {
           this.activeMonthIndex++;
           return
@@ -516,7 +516,7 @@
         );
 
         this.activeMonthIndex++;
-      }, 200),
+      },
 
       setCheckIn(date) {
         this.checkIn = date;
