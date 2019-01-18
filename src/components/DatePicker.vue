@@ -96,7 +96,7 @@
               v-for='dayName in this.i18n["day-names"]'
               v-text='dayName'
             )
-          .datepicker__months#swiperWrapper
+          .datepicker__months#swiperWrapper(@scroll='handleScroll')
             div.datepicker__month(
               v-for='(a, n) in months'
               v-bind:key='n'
@@ -603,7 +603,6 @@
       document.addEventListener('touchstart', this.handleTouchStart, false);
       document.addEventListener('touchmove', this.handleTouchMove, false);
       window.addEventListener('resize', this.handleWindowResize);
-      document.getElementById('swiperWrapper').addEventListener('scroll', this.handleScroll);
 
       this.onElementHeightChange(document.body, () => {
         this.emitHeighChangeEvent();
