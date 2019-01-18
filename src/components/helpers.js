@@ -95,9 +95,9 @@ export default {
         if (swiperWrapper.scrollTop === 0) {
           this.renderNextMonth();
         }
-        if (swiperWrapper.scrollTop > (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 500) && swiperWrapper.scrollTop <= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight)) {
-          this.renderNextMonth();
-        }
+        // if (swiperWrapper.scrollTop > (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 500) && swiperWrapper.scrollTop <= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight)) {
+        //   this.renderNextMonth();
+        // }
         else if (swiperWrapper.scrollTop === 0) {
           this.renderPreviousMonth();
         }
@@ -117,7 +117,7 @@ export default {
   handleScroll(evt) {
     if (this.screenSize !== 'desktop' && this.isOpen && !this.openMode) {
       const swiperWrapper = document.getElementById('swiperWrapper');
-      this.$emit('handlescroll', {scrollTop:swiperWrapper.scrollTop,scrollHeight:swiperWrapper.scrollHeight,offsetHeight:swiperWrapper.offsetHeight});
+      // this.$emit('handlescroll', {scrollTop:swiperWrapper.scrollTop,scrollHeight:swiperWrapper.scrollHeight,offsetHeight:swiperWrapper.offsetHeight});
       if (swiperWrapper.scrollHeight > swiperWrapper.clientHeight) {
         //if close to the bottom
         if (swiperWrapper.scrollTop >= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight - 350) && swiperWrapper.scrollTop <= (swiperWrapper.scrollHeight - swiperWrapper.offsetHeight + 10)) {
