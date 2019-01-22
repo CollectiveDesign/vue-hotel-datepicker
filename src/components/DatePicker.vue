@@ -1147,6 +1147,7 @@
             @include device($up-to-tablet) {
               right: 21px;
               top: 21px;
+              left: auto;
             }
 
             svg {
