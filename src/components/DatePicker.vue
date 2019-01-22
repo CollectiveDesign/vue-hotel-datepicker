@@ -1141,11 +1141,11 @@
             outline: 0;
             z-index: 10000;
             position: fixed;
-            right: 7px;
+            left: 7px;
             top: 5px;
 
             @include device($up-to-tablet) {
-              left: 21px;
+              right: 21px;
               top: 21px;
             }
 
