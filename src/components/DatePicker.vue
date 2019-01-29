@@ -604,9 +604,9 @@
       document.addEventListener('touchmove', this.handleTouchMove, false);
       window.addEventListener('resize', this.handleWindowResize);
 
-      this.onElementHeightChange(document.body, () => {
-        this.emitHeighChangeEvent();
-      });
+      // this.onElementHeightChange(document.body, () => {
+      //   this.emitHeighChangeEvent();
+      // });
     },
 
     destroyed() {
