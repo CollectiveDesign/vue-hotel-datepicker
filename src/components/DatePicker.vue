@@ -358,6 +358,7 @@
           if (!this.openMode) {
             // this.isOpen = false;
             this.$emit('close');
+            this.$nextTick(() => this.clearUnusedMonths());
           }
         }
 
@@ -367,6 +368,12 @@
 
     methods: {
       ...Helpers,
+
+      clearUnusedMonths() {
+        if (this.activeMonthIndex + 2 < this.months.length) {
+          this.months.splice(this.activeMonthIndex + 2, this.months.length - this.activeMonthIndex + 3); // Add 3 because length is not zero based
+        }
+      },
 
       formatDate(date) {
         if (date) {
@@ -436,6 +443,7 @@
         if (!this.openMode) {
           // this.isOpen = false;
           this.$emit('close');
+          this.$nextTick(() => this.clearUnusedMonths());
         }
       },
 
