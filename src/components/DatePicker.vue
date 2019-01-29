@@ -380,7 +380,7 @@
               break;
             }
           }
-        } else if (activeMonthIndex > 6) {
+        } else if (this.activeMonthIndex > 6) {
           startUnusedIndex = 6;
         }
         this.months.splice(startUnusedIndex, this.months.length - startUnusedIndex + 1); // Add 1 because length is not zero based
