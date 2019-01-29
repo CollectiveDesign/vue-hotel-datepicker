@@ -373,19 +373,16 @@
         let startUnusedIndex = 0;
         if (this.checkIn && this.checkOut) {
           const checkOutMY = this.checkOut.getMonth().toString() + this.checkOut.getFullYear().toString();
-          console.log('CO MY:', checkOutMY);
           for (let monthIndex in this.months) {
             const monthMY = this.months[monthIndex].originDate.getMonth().toString() + this.months[monthIndex].originDate.getFullYear().toString();
-            console.log('CU MY:', monthMY);
             if (checkOutMY === monthMY) {
-              startUnusedIndex = monthIndex + 1;
+              startUnusedIndex = parseInt(monthIndex) + 1;
               break;
             }
           }
         } else if (activeMonthIndex > 6) {
           startUnusedIndex = 6;
         }
-        console.log(startUnusedIndex);
         this.months.splice(startUnusedIndex, this.months.length - startUnusedIndex + 1); // Add 1 because length is not zero based
       },
 
