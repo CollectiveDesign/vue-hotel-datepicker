@@ -361,10 +361,12 @@
               setTimeout(() => { 
                 this.$emit('close');
                 this.$nextTick(() => this.clearUnusedMonths()); 
+                this.reRender();
               }, 500);
             } else {
               this.$emit('close');
               this.$nextTick(() => this.clearUnusedMonths());
+              this.reRender();
             }
           }
         }
