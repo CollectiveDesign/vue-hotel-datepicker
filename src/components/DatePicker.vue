@@ -1,10 +1,8 @@
 <template lang='pug'>
   .datepicker__wrapper(v-if='show' @blur="clickOutside" :class="`${openMode ? 'datepicker__wrapper--open-mode' : ''}`" :style="design === 'inline' && !openMode || hideInput ? {background: 'none'} : ''")
     .datepicker__close-button.-hide-on-desktop(v-if='isOpen && !openMode' @click='hideDatepicker')
-      svg(class="hamburger hamRotate ham active" viewBox="0 0 100 100" width="50")
-        path(class="line top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40")
-        path(class="line middle" d="m 30,50 h 40")
-        path(class="line bottom" d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40")
+      svg(width="30px" height="30px" viewBox="0 0 30 30")
+        path(d="M5.54505772,7.5 L-0.0951181975,1.85982408 C-0.634960601,1.31998168 -0.634960601,0.444724206 -0.0951181975,-0.0951181975 C0.444724206,-0.634960601 1.31998168,-0.634960601 1.85982408,-0.0951181975 L7.5,5.54505772 L13.1401759,-0.0951181975 C13.6800183,-0.634960601 14.5552758,-0.634960601 15.0951182,-0.0951181975 C15.6349606,0.444724206 15.6349606,1.31998168 15.0951182,1.85982408 L9.45494228,7.5 L15.0951182,13.1401759 C15.6349606,13.6800183 15.6349606,14.5552758 15.0951182,15.0951182 C14.5552758,15.6349606 13.6800183,15.6349606 13.1401759,15.0951182 L7.5,9.45494228 L1.85982408,15.0951182 C1.31998168,15.6349606 0.444724206,15.6349606 -0.0951181975,15.0951182 C-0.634960601,14.5552758 -0.634960601,13.6800183 -0.0951181975,13.1401759 L5.54505772,7.5 Z")
     .datepicker__dummy-wrapper(v-if='!hideInput'  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''} ${openMode ? 'datepicker__dummy-wrapper--open-mode' : ''} ${design === 'inline' && isOpen ? 'datepicker__dummy-wrapper--open-mode-inline' : ''}`" :style="design === 'boxed' && !openMode ? boxedStyle : {border: 'none', 'padding-left' : '2px', 'padding-right' : '2px'}")
       date-input(
         :i18n="i18n"
