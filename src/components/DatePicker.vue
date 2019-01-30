@@ -1,8 +1,10 @@
 <template lang='pug'>
   .datepicker__wrapper(v-if='show' @blur="clickOutside" :class="`${openMode ? 'datepicker__wrapper--open-mode' : ''}`" :style="design === 'inline' && !openMode || hideInput ? {background: 'none'} : ''")
     .datepicker__close-button.-hide-on-desktop(v-if='isOpen && !openMode' @click='hideDatepicker')
-      svg(width="35px" height="35px" viewBox="-7 -7 30 30")
-        path(d="M6.2521645,7.5 L0.258435193,1.50627069 C-0.0861450644,1.16169043 -0.0861450644,0.60301545 0.258435193,0.258435193 C0.60301545,-0.0861450644 1.16169043,-0.0861450644 1.50627069,0.258435193 L7.5,6.2521645 L13.4937293,0.258435193 C13.8383096,-0.0861450644 14.3969845,-0.0861450644 14.7415648,0.258435193 C15.0861451,0.60301545 15.0861451,1.16169043 14.7415648,1.50627069 L8.7478355,7.5 L14.7415648,13.4937293 C15.0861451,13.8383096 15.0861451,14.3969845 14.7415648,14.7415648 C14.3969845,15.0861451 13.8383096,15.0861451 13.4937293,14.7415648 L7.5,8.7478355 L1.50627069,14.7415648 C1.16169043,15.0861451 0.60301545,15.0861451 0.258435193,14.7415648 C-0.0861450644,14.3969845 -0.0861450644,13.8383096 0.258435193,13.4937293 L6.2521645,7.5 Z")
+      svg(class="hamburger hamRotate ham active" viewBox="0 0 100 100" width="50")
+        path(class="line top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40")
+        path(class="line middle" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40")
+        path(class="line bottom" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40")
     .datepicker__dummy-wrapper(v-if='!hideInput'  :class="`${isOpen ? 'datepicker__dummy-wrapper--is-active' : ''} ${openMode ? 'datepicker__dummy-wrapper--open-mode' : ''} ${design === 'inline' && isOpen ? 'datepicker__dummy-wrapper--open-mode-inline' : ''}`" :style="design === 'boxed' && !openMode ? boxedStyle : {border: 'none', 'padding-left' : '2px', 'padding-right' : '2px'}")
       date-input(
         :i18n="i18n"
@@ -354,7 +356,7 @@
           this.nextDisabledDate = null;
           this.show = true;
           this.parseDisabledDates();
-          // this.reRender()
+          // this.reRender() //if the delay is applied, when the reRender function is called it will shift to the first (current) month 
           if (!this.openMode) {
             // this.isOpen = false;
             if (window.innerWidth < 1024) { //apply a little delay on mobile for visual feedback
