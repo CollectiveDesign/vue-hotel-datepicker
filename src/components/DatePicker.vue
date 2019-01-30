@@ -354,7 +354,7 @@
           this.nextDisabledDate = null;
           this.show = true;
           this.parseDisabledDates();
-          this.reRender()
+          // this.reRender()
           if (!this.openMode) {
             // this.isOpen = false;
             if (window.innerWidth < 1024) { //apply a little delay on mobile for visual feedback
@@ -469,7 +469,7 @@
         if (!this.openMode) {
           // this.isOpen = false;
           this.$emit('close');
-          // this.$nextTick(() => this.clearUnusedMonths());
+          this.$nextTick(() => this.clearUnusedMonths());
         }
       },
 
@@ -493,8 +493,8 @@
 
         if (this.checkIn == null && this.singleDaySelection == false) {
           this.checkIn = event.date;
-          this.inputFocused[0] = false;
-          this.inputFocused[1] = true;
+          // this.inputFocused[0] = false;
+          // this.inputFocused[1] = true;
         } else if (this.singleDaySelection == true) {
           this.checkIn = event.date
           this.checkOut = event.date
@@ -510,7 +510,7 @@
           // this.inputFocused[1] = true; 
         }
 
-        // this.nextDisabledDate = event.nextDisabledDate
+        this.nextDisabledDate = event.nextDisabledDate
       },
 
       renderPreviousMonth() {
