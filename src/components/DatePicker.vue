@@ -369,7 +369,13 @@
           }
         }
 
-        this.$emit("check-out-changed", newDate)
+        if (window.innerWidth < 1024) { //apply a little delay on mobile for visual feedback
+          setTimeout(function(){ 
+            this.$emit("check-out-changed", newDate); 
+          }, 500);
+        } else {
+          this.$emit("check-out-changed", newDate);
+        }
       },
     },
 
