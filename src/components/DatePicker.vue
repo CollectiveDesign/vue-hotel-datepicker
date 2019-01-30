@@ -357,8 +357,15 @@
           this.reRender()
           if (!this.openMode) {
             // this.isOpen = false;
-            this.$emit('close');
-            this.$nextTick(() => this.clearUnusedMonths());
+            if (window.innerWidth < 1024) { //apply a little delay on mobile for visual feedback
+              setTimeout(function(){ 
+                this.$emit('close');
+                this.$nextTick(() => this.clearUnusedMonths()); 
+              }, 500);
+            } else {
+              this.$emit('close');
+              this.$nextTick(() => this.clearUnusedMonths());
+            }
           }
         }
 
