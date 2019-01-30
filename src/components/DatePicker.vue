@@ -469,7 +469,7 @@
         if (!this.openMode) {
           // this.isOpen = false;
           this.$emit('close');
-          this.$nextTick(() => this.clearUnusedMonths());
+          // this.$nextTick(() => this.clearUnusedMonths());
         }
       },
 
@@ -510,7 +510,7 @@
           // this.inputFocused[1] = true; 
         }
 
-        this.nextDisabledDate = event.nextDisabledDate
+        // this.nextDisabledDate = event.nextDisabledDate
       },
 
       renderPreviousMonth() {
