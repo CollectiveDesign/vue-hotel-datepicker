@@ -441,7 +441,7 @@
             clearTimeout(el.onElementHeightChangeTimer);
           }
 
-          el.onElementHeightChangeTimer = setTimeout(run, 1000);
+          // el.onElementHeightChangeTimer = setTimeout(run, 1000);
         })();
       },
 
