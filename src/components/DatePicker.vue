@@ -501,13 +501,13 @@
         }
         else if (this.checkIn !== null && this.checkOut == null) {
           this.checkOut = event.date;
-          this.inputFocused[1] = false;
+          // this.inputFocused[1] = false;
         }
         else {
           this.checkOut = null;
           this.checkIn = event.date;
-          this.inputFocused[0] = false;
-          this.inputFocused[1] = true; 
+          // this.inputFocused[0] = false;
+          // this.inputFocused[1] = true; 
         }
 
         this.nextDisabledDate = event.nextDisabledDate
