@@ -104,7 +104,7 @@ export default {
     },
 
     isToday() {
-      return this.compareDay(this.currentDate, this.date) == 0;
+      return this.belongsToThisMonth && this.compareDay(this.currentDate, this.date) == 0;
     },
 
     dayClass(){
