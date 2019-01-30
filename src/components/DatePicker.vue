@@ -358,7 +358,7 @@
           if (!this.openMode) {
             // this.isOpen = false;
             if (window.innerWidth < 1024) { //apply a little delay on mobile for visual feedback
-              setTimeout(function(){ 
+              setTimeout(() => { 
                 this.$emit('close');
                 this.$nextTick(() => this.clearUnusedMonths()); 
               }, 500);
@@ -370,7 +370,7 @@
         }
 
         if (window.innerWidth < 1024) { //apply a little delay on mobile for visual feedback
-          setTimeout(function(){ 
+          setTimeout(() => { 
             this.$emit("check-out-changed", newDate); 
           }, 500);
         } else {
