@@ -368,6 +368,8 @@
               this.$nextTick(() => this.clearUnusedMonths());
               this.reRender();
             }
+          } else {
+            this.reRender(); //needed on open mode to apply the style to the days between check-in and check-out
           }
         }
 
