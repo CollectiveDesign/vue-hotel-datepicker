@@ -1189,7 +1189,7 @@
 
             svg {
               path {
-                fill: #767676;
+                stroke: #2e2e2e;
               }
             }
         }
