@@ -597,7 +597,7 @@
           sortedDates[i] = new Date(this.disabledDates[i]);
         }
 
-        sortedDates.sort((a, b) => a - b);
+        // sortedDates.sort((a, b) => a - b);
 
         this.sortedDisabledDates = sortedDates;
       }
