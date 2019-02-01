@@ -360,12 +360,12 @@
             if (window.innerWidth < 1024) { //apply a little delay on mobile for visual feedback
               setTimeout(() => { 
                 this.$emit('close');
-                this.$nextTick(() => this.clearUnusedMonths()); 
+                // this.$nextTick(() => this.clearUnusedMonths()); 
                 this.reRender();
               }, 500);
             } else {
               this.$emit('close');
-              this.$nextTick(() => this.clearUnusedMonths());
+              // this.$nextTick(() => this.clearUnusedMonths());
               this.reRender();
             }
           } else {
@@ -473,7 +473,7 @@
         if (!this.openMode) {
           // this.isOpen = false;
           this.$emit('close');
-          this.$nextTick(() => this.clearUnusedMonths());
+          // this.$nextTick(() => this.clearUnusedMonths());
         }
       },
 
