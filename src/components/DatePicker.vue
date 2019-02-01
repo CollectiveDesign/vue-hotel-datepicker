@@ -594,10 +594,10 @@
         const sortedDates = [];
 
         for (let i = 0; i < this.disabledDates.length; i++) {
-          sortedDates[i] = new Date(this.disabledDates[i]);
+          sortedDates[i] = new Date(this.disabledDates[i]).toUTCString();
         }
 
-        // sortedDates.sort((a, b) => a - b);
+        sortedDates.sort((a, b) => a - b);
 
         this.sortedDisabledDates = sortedDates;
       }
